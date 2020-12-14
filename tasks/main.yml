@@ -1,2 +1,7 @@
 ---
 # tasks file for teardown_vpc_stack
+- name: teardown a cloudformation stack
+  amazon.aws.cloudformation:
+    stack_name: "{{ ec2_name_prefix }}"
+    state: "absent"
+    region: "us-east-1"
